@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: todolist_dev
+  host: localhost
+  pool: 5
+  username: superadmin
+  password: 123123123
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: todolist_test
+  host: localhost
+  pool: 5
+  username: superadmin 
+  password: 123123123

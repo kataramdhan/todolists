@@ -6,6 +6,13 @@ ruby "3.2.2"
 
 # custom
 gem 'pg', '~> 1.5', '>= 1.5.4'
+gem "devise", "~> 4.9"
+
+# Cron jobs
+gem 'whenever', require: false
+
+
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
@@ -74,3 +81,5 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+

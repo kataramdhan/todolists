@@ -4,6 +4,8 @@ class Task < ApplicationRecord
                                     message: "%{value} is not a valid" }
     validate :past_date
 
+    belongs_to :user
+
     def past_date
         if self.deadline.past?
             errors.add(:deadline, 'is past')

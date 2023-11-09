@@ -10,25 +10,25 @@ module Api
 
         def index
             tasks = Task.all
-            render json: tasks, status: :ok
+            render json: TaskSerializer.new(tasks).serializable_hash.to_json, status: :ok
         end
 
         def create
             @task = Task.new(task_params)
             if @task.save!
-                render json: @task, status: :ok
+                render json: TaskSerializer.new(@task).serializable_hash.to_json, status: :ok
             else
                 render json: { error: 'Unable to create task' }, status: :unprocessable_entity
             end
         end
 
         def show
-            render json: @task, status: :ok
+            render json: TaskSerializer.new(@task).serializable_hash.to_json, status: :ok
         end
 
         def update
             if @task.update!(task_params)
-                render json: @task, status: :ok
+                render json: TaskSerializer.new(@task).serializable_hash.to_json, status: :ok
             else
                 render json: { error: 'Unable to update task' }, status: :unprocessable_entity
             end
@@ -39,7 +39,6 @@ module Api
                 render json: "has been deleted", status: :ok
             end
         end
-
 
 
         private

@@ -7,6 +7,7 @@ ruby "3.2.2"
 # custom
 gem 'pg', '~> 1.5', '>= 1.5.4'
 gem "devise", "~> 4.9"
+gem 'jsonapi-serializer'
 
 # Cron jobs
 gem 'whenever', require: false

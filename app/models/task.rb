@@ -7,7 +7,7 @@ class Task < ApplicationRecord
     belongs_to :user
 
     def past_date
-        if self.deadline.past?
+        if self.deadline.present? && self.deadline.past?
             errors.add(:deadline, 'is past')
         end
     end
